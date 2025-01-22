@@ -1,0 +1,29 @@
+:root {
+  --dark-100: #DCE0D9;
+  --dark-300: #858c87;
+  --dark-500: #595959;
+  --dark-900: #000000FF;
+  --light: #ffffff;
+  --primary-green: #22BB00FF;
+  --primary-blue: #4C4C9D;
+  --primary-red: #6B0F1A;
+  --primary-purple: #31081F;
+}
+
+
+body {
+  font-family: 'PT Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+button {
+  all: unset;
+}

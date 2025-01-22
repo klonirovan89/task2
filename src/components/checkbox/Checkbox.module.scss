@@ -1,0 +1,33 @@
+.checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+
+  input {
+    width: 25px;
+    height: 25px;
+    border: 1px solid #CDCDCD;
+    border-radius: 50%;
+    appearance: none;
+    outline: none;
+    cursor: pointer;
+    background-color: white;
+    position: relative;
+    transition: 0.2s all;
+
+    &:checked {
+      &::before {
+        content: '';
+        position: absolute;
+        top: 7px;
+        left: 6px;
+        width: 11px;
+        height: 4px;
+        border: solid #00BB6D;
+        border-width: 0 0 2px 2px;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
