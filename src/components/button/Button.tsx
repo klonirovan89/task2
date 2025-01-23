@@ -3,16 +3,18 @@ import s from "./Button.module.scss";
 
 type ButtonProps = {
     id: string;
-    isActive: boolean;
+    isActive?: boolean;
+    disabled?: boolean
     label: string;
     onClick: (id: string) => void;
+    className?: string
 }
 
-export const Button = ({id,isActive, label, onClick}: ButtonProps) => {
+export const Button = ({id, isActive, disabled, label, onClick, className}: ButtonProps) => {
 
     return (
         <div>
-            <button className={clsx(s.button, isActive && s.active)} id={id} onClick={() => onClick(id)}>
+            <button className={clsx(s.button, className && s.clear, isActive && s.active, disabled && s.disabled)} disabled={disabled} id={id} onClick={() => onClick(id)}>
                 <span>{label}</span>
             </button>
         </div>

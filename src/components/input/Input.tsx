@@ -1,21 +1,18 @@
 import s from "./Input.module.scss";
-import {clsx} from "clsx";
 
 type InputProps = {
     placeholder: string;
-    name: string;
     value?: string | number;
     onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-export const Input = ({placeholder, name, onChange, value}: InputProps) => {
+export const Input = ({placeholder, onChange, value}: InputProps) => {
 
     return (
-        <div>
+        <div className={s.input}>
             <input
                 type="text"
                 placeholder={placeholder}
-                name={name}
                 onChange={onChange}
                 value={value}
                 />

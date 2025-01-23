@@ -4,13 +4,18 @@ import {clearTasks, toggleTaskCheckbox} from '../tasksSlice';
 import {TaskInput} from "./taskInput/TaskInput";
 import {Task} from "./task/Task";
 import {TaskFilters} from "./taskFilters/TaskFilters";
+import {Button} from "../../components/button/Button";
 
 import s from './TaskList.module.scss';
 
 export const TaskList = () => {
+
+    const dispatch = useDispatch();
+
     const tasks = useSelector((state: RootState) => state.tasks.tasks);
     const filter = useSelector((state: RootState) => state.tasks.filter);
-    const dispatch = useDispatch();
+
+    const completedTasksCount = tasks.filter((task) => task.completed).length;
 
     const filteredTasks = tasks.filter((task) => {
         if (filter === 'active') return !task.completed;
@@ -30,12 +35,15 @@ export const TaskList = () => {
         <div className={s.tasklist}>
             <h2>Tasks</h2>
             <TaskInput/>
+            <div className={s.tasks}>
                 {filteredTasks.map((task) => (
-                        <Task task={task} onChange={() => toggleCheckbox(task.id)}/>
+                    <Task key={task.id} task={task} onChange={toggleCheckbox}/>
                 ))}
-            <div>
+            </div>
+            <div className={s.container}>
                 <TaskFilters/>
-                <button onClick={onClearCompleted}>Clear completed</button>
+                <Button id={"clear"} disabled={completedTasksCount === 0} label={"Clear completed"}
+                        onClick={onClearCompleted} className={"clear"}/>
             </div>
         </div>
     );

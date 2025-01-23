@@ -2,18 +2,29 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100px;
+  width: 120px;
+  height: 30px;
   font-size: 16px;
   font-weight: 700;
-  line-height: 20.7px;
 
   white-space: nowrap;
-  border-radius: 12px;
+  border-radius: 5px;
   transition: 0.2s all;
   cursor: pointer;
+  background-color: var(--primary-blue);
+  color: var(--dark-100);
 }
 
 .active {
-  background-color: red;
-  color: #3A3A3A;
+  background-color: var(--primary-red);
+  color:  var(--dark-100);
+}
+
+.disabled {
+  color: var(--dark-300);
+  cursor: not-allowed;
+}
+
+.clear {
+  width: 150px;
 }
