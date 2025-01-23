@@ -18,9 +18,17 @@ const initialState: TasksStateType = {
     filter: 'all',
 };
 
+const loadState = (): TasksStateType => {
+    const savedState = localStorage.getItem('tasksState');
+    if (savedState) {
+        return JSON.parse(savedState) as TasksStateType;
+    }
+    return initialState;
+};
+
 const tasksSlice = createSlice({
     name: 'tasks',
-    initialState,
+    initialState: loadState(),
     reducers: {
         addTask: (state, action: PayloadAction<string>) => {
             const newTask: TaskDataType = {
