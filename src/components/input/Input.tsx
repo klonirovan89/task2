@@ -7,7 +7,6 @@ type InputProps = {
 }
 
 export const Input = ({placeholder, onChange, value}: InputProps) => {
-
     return (
         <div className={s.input}>
             <input

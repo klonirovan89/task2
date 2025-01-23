@@ -2,9 +2,9 @@ import {useDispatch} from 'react-redux';
 import {useState} from "react";
 import {addTask} from '../../tasksSlice';
 import {Input} from "../../../components/input/Input";
+import {Button} from "../../../components/button/Button";
 
 import s from "./TaskInput.module.scss"
-import {Button} from "../../../components/button/Button";
 
 export const TaskInput = () => {
     const [input, setInput] = useState('');

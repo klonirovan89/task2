@@ -14,7 +14,8 @@ export const Button = ({id, isActive, disabled, label, onClick, className}: Butt
 
     return (
         <div>
-            <button className={clsx(s.button, className && s.clear, isActive && s.active, disabled && s.disabled)} disabled={disabled} id={id} onClick={() => onClick(id)}>
+            <button className={clsx(s.button, className && s.clear, isActive && s.active, disabled && s.disabled)}
+                    disabled={disabled} id={id} onClick={() => onClick(id)}>
                 <span>{label}</span>
             </button>
         </div>

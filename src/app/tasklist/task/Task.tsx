@@ -4,14 +4,12 @@ import {TaskDataType} from "../../tasksSlice";
 
 import s from "./Task.module.scss";
 
-
 type TodoProps = {
     task: TaskDataType;
     onChange: (id: number) => void;
 };
 
 export const Task = ({task, onChange}: TodoProps) => {
-
     return (
         <div className={s.task}>
             <Checkbox isChecked={task.completed} onChange={() => onChange(task.id)}/>
